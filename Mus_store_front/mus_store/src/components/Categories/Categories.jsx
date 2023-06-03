@@ -4,14 +4,15 @@ import { Navigate, useNavigate } from "react-router-dom";
 import Subcat from "../Subcategories/Subcat";
 import { useDispatch } from "react-redux";
 import { SetCatId } from "../../redux/reducer";
-
+import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import spic from '../../spic.jpg'
 
 const Categories = () => {
-    
-    const [items, setItems] = useState([]);
-    const [catId, setCatId] = useState('');
-    const navigate = useNavigate();
-    const dispatch = useDispatch();
+
+  const [items, setItems] = useState([]);
+  const [catId, setCatId] = useState('');
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleClick = (id) => {
     setCatId(id)
@@ -19,15 +20,15 @@ const Categories = () => {
     navigate('/subcat')
   }
 
-    useEffect(() => {
-        fetch(`http://127.0.0.1:8000/categories`)
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    setItems(result);
-                }
-            )
-    }, [])
+  useEffect(() => {
+    fetch(`http://127.0.0.1:8000/categories`)
+      .then(res => res.json())
+      .then(
+        (result) => {
+          setItems(result);
+        }
+      )
+  }, [])
 
   return (
     <div>
@@ -37,6 +38,7 @@ const Categories = () => {
         </div>
       ))}
 
+      
     </div>
 
   )

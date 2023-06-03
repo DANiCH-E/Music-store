@@ -21,7 +21,7 @@ const Products = () => {
 
   return (
     <div>
-        <Header/>
+        {/* <Header/> */}
         {/* <Categories/> */}
       {items.map(item => (
         <div key={item.id}>

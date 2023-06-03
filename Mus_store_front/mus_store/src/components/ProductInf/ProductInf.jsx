@@ -20,7 +20,7 @@ const ProductInf = () => {
 
   return (
     <div>
-        <Header/>
+        {/* <Header/> */}
         {/* <Categories/> */}
       <div>
         <div>{items.title}</div>

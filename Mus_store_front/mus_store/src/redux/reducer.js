@@ -21,9 +21,15 @@ const Slice = createSlice({
         },
         SetSubCatId: (state, action) => {
             state.itemsSubCat.id = action.payload
-        }
+        },
+        Setusername: (state, action) => {
+            state.itemsUsers.username = action.payload
+        },
+        Setid: (state, action) => {
+            state.itemsUsers.id = action.payload
+        },
     }
 })
 
-export const {SetCatId, SetSubCatId} = Slice.actions;
+export const {SetCatId, SetSubCatId, Setusername, Setid} = Slice.actions;
 export default Slice.reducer;

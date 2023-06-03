@@ -1,5 +1,11 @@
 from polls.models import *
 from rest_framework import serializers
+from django.contrib.auth.models import User, Permission
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ["id", "username", "password"]
 
 class ProductSerializer(serializers.ModelSerializer):
     class Meta:
