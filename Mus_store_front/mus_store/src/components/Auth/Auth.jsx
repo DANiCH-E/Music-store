@@ -6,7 +6,7 @@ import {useDispatch, useSelector} from "react-redux";
 
 import {Link, useNavigate} from "react-router-dom";
 
-import { Setusername, Setid} from "../../redux/reducer";
+import { Setusername, Setid, SetIsAuthentificated} from "../../redux/reducer";
 
 import axios from "axios";
 import { Modal, Form, Button } from "react-bootstrap";
@@ -50,6 +50,7 @@ export function Auth(){
             console.log(res.data.success)
             dispatch(Setusername(res.data.username))
             dispatch(Setid(res.data.id))
+            dispatch(SetIsAuthentificated())
             localStorage.setItem("userid", res.data.id)
             authLinks()
             // Cookies.set('name', 'value')

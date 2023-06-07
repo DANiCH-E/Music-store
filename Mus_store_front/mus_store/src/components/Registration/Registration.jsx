@@ -3,6 +3,7 @@ import Cookies from 'js-cookie'
 import { useSelector } from "react-redux";
 // import './Registration.css';
 
+
 import { Link, useNavigate } from "react-router-dom";
 import { checkAuthenticated } from "./checkAuthenticated";
 import { Setauther, Setid, Setusername } from "../../redux/reducer";

@@ -29,31 +29,24 @@ const Subcat = () => {
       )
   }, [])
 
+
+  const renderCard = (card, index) => {
+    return(
+      <Container>
+      <Card style={{width: "18rem"}} key={index} className="box">
+      <Card.Img variant="top" src={spic}/>
+      <Card.Body>
+        <Card.Title><Link onClick={() => handleClick(card.id)} to={`/products`}>{card.name}</Link></Card.Title>
+      </Card.Body>
+    </Card>
+    </Container>
+    );
+    
+  };
+
   return (
     <div className="grid">
-      {/* <Header/> */}
-      {/* <Categories/> */}
-      {items.map(item => (
-        <div key={item.id} className="grid">
-          
-
-        
-
-      {/* <Container style={{paddingTop: '2rem', paddingBottom: '2rem'}}>
-        <Row>
-          <Col> */}
-            <Card style={{width: '18rem'}}>
-              <Card.Img variant="top" src={spic} key={item.id} className="box" />
-              <Card.Body>
-                <Card.Title><Link onClick={() => handleClick(item.id)} to={`/products`}>{item.name}</Link></Card.Title>
-                
-              </Card.Body>
-            </Card>
-          {/* </Col>
-        </Row>
-      </Container> */}
-      </div>
-      ))}
+      {items.map(renderCard)}
     </div>
   )
 }

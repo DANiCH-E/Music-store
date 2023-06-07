@@ -13,6 +13,12 @@ const Slice = createSlice({
         },
         itemsSubCat: {
             id: ''
+        },
+        itemsInCart : [],
+        products: {
+            id: null,
+            title: '',
+            price: '',
         }
     },
     reducers: {
@@ -28,8 +34,26 @@ const Slice = createSlice({
         Setid: (state, action) => {
             state.itemsUsers.id = action.payload
         },
+        SetItemInCart: (state, action) => {
+            state.itemsInCart.push(action.payload)
+        },
+        deleteItemFromCart: (state, action) => {
+            state.itemsInCart = state.itemsInCart.filter(products => products.id !== action.payload)
+        },
+        SetProductId: (state, action) => {
+            state.itemsUsers.id=action.payload
+        },
+        SetProductTitle: (state, action) => {
+            state.itemsUsers.title=action.payload
+        },
+        SetProductPrice: (state, action) => {
+            state.itemsUsers.price=action.payload
+        },
+        SetIsAuthentificated: (state, action) => {
+            state.itemsUsers.isAunthenticated=true
+        },
     }
 })
 
-export const {SetCatId, SetSubCatId, Setusername, Setid} = Slice.actions;
+export const {SetCatId, SetSubCatId, Setusername, Setid, SetItemInCart, SetProductId, SetProductTitle, SetProductPrice, deleteItemFromCart, SetIsAuthentificated }= Slice.actions;
 export default Slice.reducer;

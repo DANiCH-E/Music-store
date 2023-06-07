@@ -13,6 +13,7 @@ import Registration from './components/Registration/Registration';
 import Header from './components/Header/Header';
 import About from './components/About/About';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import { Cart } from './components/Cart/Cart';
 function App() {
   return (
     <div>
@@ -30,6 +31,7 @@ function App() {
           <Route exact path={`/login`} element={<Auth/>}/>
           <Route exact path={`/register`} element={<Registration/>}/>
           <Route exact path={`/about`} element={<About/>}/>
+          <Route exact path={`/cart`} element={<Cart/>}/>
         </Routes>
       </BrowserRouter>
       
